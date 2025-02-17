@@ -1,10 +1,10 @@
-/* 2354218 Ğ¤¼ÑÍ® ¼Æ¿Æ */
+
 #include "90-b2.h"
-//ÅĞ¶Ï½áÊø
+//åˆ¤æ–­ç»“æŸ
 int judge_end()
 {
 	
-	cout << "±¾Ğ¡Ìâ½áÊø£¬ÇëÊäÈëEnd¼ÌĞø...";
+	cout << "æœ¬å°é¢˜ç»“æŸï¼Œè¯·è¾“å…¥Endç»§ç»­...";
 	int x, y;
 	cct_getxy(x, y);
 	while (1) {
@@ -18,7 +18,7 @@ int judge_end()
 			return 0;
 		}
 		else {
-			cct_showstr(0, y+1, "ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë", 0,7 , 1);
+			cct_showstr(0, y+1, "è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥", 0,7 , 1);
 			cin.clear();
 			cct_gotoxy(x, y);
 			cout << "            ";
@@ -26,12 +26,12 @@ int judge_end()
 		}
 	}
 }
-//ÊäÈëº¯Êı
+//è¾“å…¥å‡½æ•°
 void input(int &line,int &col)
 {
 	while (true)
 	{
-		cout << "ÇëÊäÈëĞĞÊı(7 - 9)£º" << endl;
+		cout << "è¯·è¾“å…¥è¡Œæ•°(7 - 9)ï¼š" << endl;
 		cin >> line;
 		if (cin.fail()) {
 			cin.clear();
@@ -46,7 +46,7 @@ void input(int &line,int &col)
 	}
 	while (true)
 	{
-		cout << "ÇëÊäÈëÁĞÊı(7 - 9)£º" << endl;
+		cout << "è¯·è¾“å…¥åˆ—æ•°(7 - 9)ï¼š" << endl;
 		cin >> col;
 		if (cin.fail()) {
 			cin.clear();
@@ -61,7 +61,7 @@ void input(int &line,int &col)
 	}
 }
 
-//ÄÚ²¿Êı×é£¬³õÊ¼Éú³ÉnĞ¡Çò
+//å†…éƒ¨æ•°ç»„ï¼Œåˆå§‹ç”Ÿæˆnå°çƒ
 void init(int shuzu[9][9], int line, int col, int n)
 {
 	int r_line, r_col, r_value, i = 0;
@@ -76,7 +76,7 @@ void init(int shuzu[9][9], int line, int col, int n)
 		}
 	}
 }
-//Éú³É3¸öĞ¡Çò,²¢ÅĞ¶ÏÊÇ·ñÊı×éÂú£¬ÂúÔò·µ»Ø0
+//ç”Ÿæˆ3ä¸ªå°çƒ,å¹¶åˆ¤æ–­æ˜¯å¦æ•°ç»„æ»¡ï¼Œæ»¡åˆ™è¿”å›0
 bool generate(int shuzu[][9], int rand3[], int line, int col,int g)
 {
 	int r_line, r_col, k = 0;
@@ -104,7 +104,7 @@ bool generate(int shuzu[][9], int rand3[], int line, int col,int g)
 			if (shuzu[r_line][r_col] == 0) {
 				shuzu[r_line][r_col] = rand3[k];
 				if (g) {
-					cct_showstr(4 * r_col + 2, 2 * r_line + 2, "©–", rand3[k], COLOR_HWHITE);
+					cct_showstr(4 * r_col + 2, 2 * r_line + 2, "ã€‡", rand3[k], COLOR_HWHITE);
 				}
 				k++;
 			}
@@ -121,14 +121,14 @@ bool generate(int shuzu[][9], int rand3[], int line, int col,int g)
 	return flag;
 }
 
-//ÊäÈëÇò×ø±ê£¬0ÆğÊ¼£¬1Ä¿µÄ
+//è¾“å…¥çƒåæ ‡ï¼Œ0èµ·å§‹ï¼Œ1ç›®çš„
 void input_ball(int shuzu[][9], int line, int col, int& ball_x, int& ball_y, int io)
 {
 	while (1) {
 		if (io == 0)
-			cout << "ÇëÒÔ×ÖÄ¸+Êı×ÖĞÎÊ½[Àı£ºc2]ÊäÈëÒªÒÆ¶¯ÇòµÄ¾ØÕó×ø±ê£º";
+			cout << "è¯·ä»¥å­—æ¯+æ•°å­—å½¢å¼[ä¾‹ï¼šc2]è¾“å…¥è¦ç§»åŠ¨çƒçš„çŸ©é˜µåæ ‡ï¼š";
 		else
-			cout << "ÇëÒÔ×ÖÄ¸+Êı×ÖĞÎÊ½[Àı£ºc2]ÊäÈëÒªÒÆ¶¯ÇòµÄÄ¿µÄ×ø±ê£º";
+			cout << "è¯·ä»¥å­—æ¯+æ•°å­—å½¢å¼[ä¾‹ï¼šc2]è¾“å…¥è¦ç§»åŠ¨çƒçš„ç›®çš„åæ ‡ï¼š";
 		int x, y;
 		cct_getxy(x, y);
 		char start[3] = { 0 };
@@ -137,25 +137,25 @@ void input_ball(int shuzu[][9], int line, int col, int& ball_x, int& ball_y, int
 		if (start[0] >= 'a' && start[0] <= 'z')
 			start[0] = start[0] - 32;
 
-		if (start[0] >= 'A' && start[0] <= ('A' + line - 1) && start[1] >= '1' && start[1] <= '0' + col) {//¸ñÊ½ÅĞ¶Ï
+		if (start[0] >= 'A' && start[0] <= ('A' + line - 1) && start[1] >= '1' && start[1] <= '0' + col) {//æ ¼å¼åˆ¤æ–­
 			int n_line = start[0] - 'A', n_col = start[1] - '1';
 			if (shuzu[n_line][n_col] != 0 && io == 0 || shuzu[n_line][n_col] == 0 && io == 1) {
-				cout << "ÊäÈëÎª" << start[0] << "ĞĞ" << start[1] << "ÁĞ" << endl;
+				cout << "è¾“å…¥ä¸º" << start[0] << "è¡Œ" << start[1] << "åˆ—" << endl;
 				ball_x = n_line;
 				ball_y = n_col;
 				break;
 			}
 			else if (io == 0) {
-				cout << "ÆğÊ¼Î»ÖÃÎª¿Õ£¬ÇëÖØĞÂÊäÈë.       " << endl;
+				cout << "èµ·å§‹ä½ç½®ä¸ºç©ºï¼Œè¯·é‡æ–°è¾“å…¥.       " << endl;
 				continue;
 			}
 			else if (io == 1) {
-				cout << "Ä¿±êÎ»ÖÃ·Ç¿Õ£¬ÇëÖØĞÂÊäÈë.       " << endl;
+				cout << "ç›®æ ‡ä½ç½®éç©ºï¼Œè¯·é‡æ–°è¾“å…¥.       " << endl;
 				continue;
 			}
 		}
 		else {
-			cct_showstr(0, y + 1, "ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë.", 0, 7, 1);
+			cct_showstr(0, y + 1, "è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥.", 0, 7, 1);
 			cin.clear();
 			cct_gotoxy(x, y);
 			cout << "            ";
@@ -163,13 +163,13 @@ void input_ball(int shuzu[][9], int line, int col, int& ball_x, int& ball_y, int
 		}
 	}
 }
-//Ñ°Â·Ëã·¨,·µ»ØÊÇ·ñ´æÔÚÂ·¾¶ÒÔ¼°½á¹ûÊı×é£¬¼ÇÂ¼Â·¾¶
+//å¯»è·¯ç®—æ³•,è¿”å›æ˜¯å¦å­˜åœ¨è·¯å¾„ä»¥åŠç»“æœæ•°ç»„ï¼Œè®°å½•è·¯å¾„
 bool findway(int shuzu[][9], char result[][9], int sr, int sc, int er, int ec, int line, int col, int path_x[], int path_y[], int& path_length) {
 	int dr[] = { -1, 1, 0, 0 };
 	int dc[] = { 0, 0, -1, 1 };
 	bool visited[9][9] = { false };
 	int queue_x[100], queue_y[100];
-	int front = 0, rear = 0; // ¶ÓÁĞµÄÍ·Î²Ö¸Õë
+	int front = 0, rear = 0; // é˜Ÿåˆ—çš„å¤´å°¾æŒ‡é’ˆ
 	int parent_x[9][9];
 	int parent_y[9][9];
 	for (int i = 0; i < line; ++i) {
@@ -220,7 +220,7 @@ bool findway(int shuzu[][9], char result[][9], int sr, int sc, int er, int ec, i
 }
 
 
-//¼ÆËã·ÖÊı£¬²¢½«Á¬Ğø5¸öÒÔÉÏÖÃÁã£¬·µ»ØÖµÊÇÊÇ·ñÓĞ¼Æ·Ö»î¶¯
+//è®¡ç®—åˆ†æ•°ï¼Œå¹¶å°†è¿ç»­5ä¸ªä»¥ä¸Šç½®é›¶ï¼Œè¿”å›å€¼æ˜¯æ˜¯å¦æœ‰è®¡åˆ†æ´»åŠ¨
 int cal_score(int shuzu[][9], int line, int col,int xiaochu[8],int g)
 {
 	int score = 0, flag1 = 0, flag2 = 0,count_total = 0,count1, count2, color;
@@ -241,7 +241,7 @@ int cal_score(int shuzu[][9], int line, int col,int xiaochu[8],int g)
 		}
 		if (flag1)
 			break;
-	}//ĞĞ
+	}//è¡Œ
 	for (j2 = 0; j2 < col; ++j2) {
 		for (i2 = 0; i2 <= line - 5; ++i2) {
 			count2 = 1;
@@ -262,7 +262,7 @@ int cal_score(int shuzu[][9], int line, int col,int xiaochu[8],int g)
 		}
 		if (flag2)
 			break;
-	}//ÁĞ
+	}//åˆ—
 	if (flag1) {
 		for (int k = 0; k < count1; ++k) {
 			shuzu[i1][j1 + k] = 0;
@@ -281,7 +281,7 @@ int cal_score(int shuzu[][9], int line, int col,int xiaochu[8],int g)
 			}
 		}
 	}
-	//ÖÃÁã
+	//ç½®é›¶
 	if (count_total) {
 		xiaochu[color] += count_total;
 		score = (count_total - 1) * (count_total - 2);
