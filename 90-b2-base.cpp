@@ -1,7 +1,7 @@
-/* 2354218 Ğ¤¼ÑÍ® ¼Æ¿Æ */
+
 #include "90-b2.h"
 
-//´òÓ¡ÄÚ²¿Êı×é
+//æ‰“å°å†…éƒ¨æ•°ç»„
 void print_shuzu(int shuzu[9][9], int line, int col)
 {
 	cout << "  |";
@@ -31,7 +31,7 @@ void print_shuzu(int shuzu[9][9], int line, int col)
 	}
 }
 
-//´òÓ¡½á¹ûÊı×é
+//æ‰“å°ç»“æœæ•°ç»„
 void print_shuzu_r(char result[9][9], int line, int col)
 {
 	cout << "  |";
@@ -53,7 +53,7 @@ void print_shuzu_r(char result[9][9], int line, int col)
 		cout << endl;
 	}
 }
-//´òÓ¡ÄÚ²¿Êı×éÒÆ¶¯Â·¾¶
+//æ‰“å°å†…éƒ¨æ•°ç»„ç§»åŠ¨è·¯å¾„
 void print_shuzu_path(int shuzu[9][9], char result[9][9], int line, int col)
 {
 	cout << "  |";
@@ -91,7 +91,7 @@ void choice_a()
 	cct_cls();
 	input(line, col);
 	cout << endl;
-	cout << "³õÊ¼Êı×é£º" << endl;
+	cout << "åˆå§‹æ•°ç»„ï¼š" << endl;
 	init(shuzu, line, col, 5);
 	//cin.ignore(65536, '\n');
 	print_shuzu(shuzu, line, col);
@@ -113,22 +113,22 @@ void choice_b()
 	input(line, col);
 	n = int(line * col * 0.6);
 	cout << endl;
-	cout << "µ±Ç°Êı×é£º" << endl;
+	cout << "å½“å‰æ•°ç»„ï¼š" << endl;
 	init(shuzu, line, col, n);
 	print_shuzu(shuzu, line, col);
-	cout << endl << "ÏÂ3¸ö²ÊÇòµÄÑÕÉ«·Ö±ğÊÇ£º";
+	cout << endl << "ä¸‹3ä¸ªå½©çƒçš„é¢œè‰²åˆ†åˆ«æ˜¯ï¼š";
 	cout << rand() % 7 + 1 << " " << rand() % 7 + 1 << " " << rand() % 7 + 1 << endl;
 	input_ball(shuzu, line, col, start_x, start_y, 0);
-	input_ball(shuzu, line, col, end_x, end_y, 1);   //ÊäÈëÇòÆğÊ¼×ø±ê
+	input_ball(shuzu, line, col, end_x, end_y, 1);   //è¾“å…¥çƒèµ·å§‹åæ ‡
 	int ret = findway(shuzu, result, start_x, start_y, end_x, end_y, line, col, path_x, path_y, path_length);
 	if (ret) {
-		cout << endl << "²éÕÒ½á¹ûÊı×é£º" << endl;;
+		cout << endl << "æŸ¥æ‰¾ç»“æœæ•°ç»„ï¼š" << endl;;
 		print_shuzu_r(result, line, col);
-		cout << endl << "ÒÆ¶¯Â·¾¶(²»Í¬É«±êÊ¶)£º" << endl;
+		cout << endl << "ç§»åŠ¨è·¯å¾„(ä¸åŒè‰²æ ‡è¯†)ï¼š" << endl;
 		print_shuzu_path(shuzu, result, line, col);
 	}
 	else {
-		cout << "ÎŞ·¨ÕÒµ½ÒÆ¶¯Â·¾¶" << endl;
+		cout << "æ— æ³•æ‰¾åˆ°ç§»åŠ¨è·¯å¾„" << endl;
 	}
 	cout << endl;
 }
@@ -153,20 +153,20 @@ void choice_c()
 		}
 		for (int i = 0; i < 3; i++) {
 			rand3[i] = rand() % 7 + 1;
-		}//Éú³ÉËæ»ú3Ğ¡Çò
+		}//ç”Ÿæˆéšæœº3å°çƒ
 		while (1) {
 			cout << endl;
-			cout << "µ±Ç°Êı×é£º" << endl;;
+			cout << "å½“å‰æ•°ç»„ï¼š" << endl;;
 			print_shuzu(shuzu, line, col);
-			cout << endl << "ÏÂ3¸ö²ÊÇòµÄÑÕÉ«·Ö±ğÊÇ£º";
+			cout << endl << "ä¸‹3ä¸ªå½©çƒçš„é¢œè‰²åˆ†åˆ«æ˜¯ï¼š";
 			for (int i = 0; i < 3; i++) {
 				cout << rand3[i] << " ";
-			}//Êä³öËæ»ú3Ğ¡Çò
+			}//è¾“å‡ºéšæœº3å°çƒ
 			cout << endl;
 			if (ret_full == 0)
 				break;
 			input_ball(shuzu, line, col, start_x, start_y, 0);
-			input_ball(shuzu, line, col, end_x, end_y, 1);     //ÊäÈëÇòÆğÊ¼×ø±ê
+			input_ball(shuzu, line, col, end_x, end_y, 1);     //è¾“å…¥çƒèµ·å§‹åæ ‡
 			int ret = findway(shuzu, result, start_x, start_y, end_x, end_y, line, col, path_x, path_y, path_length);
 			if (ret) {
 				shuzu[end_x][end_y] = shuzu[start_x][start_y];
@@ -175,13 +175,13 @@ void choice_c()
 				score += n_score;
 				if (!n_score)
 					ret_full = generate(shuzu, rand3, line, col);
-				cout << endl << "ÒÆ¶¯ºóµÄÊı×é(²»Í¬É«±êÊ¶)£º" << endl;
+				cout << endl << "ç§»åŠ¨åçš„æ•°ç»„(ä¸åŒè‰²æ ‡è¯†)ï¼š" << endl;
 				print_shuzu(shuzu, line, col);
-				cout << endl << "±¾´ÎµÃ·Ö£º" << n_score << "×ÜµÃ·Ö£º" << score << endl;
+				cout << endl << "æœ¬æ¬¡å¾—åˆ†ï¼š" << n_score << "æ€»å¾—åˆ†ï¼š" << score << endl;
 				break;
 			}
 			else {
-				cout << "ÎŞ·¨ÕÒµ½ÒÆ¶¯Â·¾¶" << endl;
+				cout << "æ— æ³•æ‰¾åˆ°ç§»åŠ¨è·¯å¾„" << endl;
 			}
 		}
 		if (ret_full == 0)
@@ -190,5 +190,5 @@ void choice_c()
 			cout << endl;
 	}
 	cct_setcolor();
-	cout << "ÎŞ¿ÕÎ»¿ÉÒÆ¶¯£¬ÓÎÏ·½áÊø!" << endl;
+	cout << "æ— ç©ºä½å¯ç§»åŠ¨ï¼Œæ¸¸æˆç»“æŸ!" << endl;
 }
