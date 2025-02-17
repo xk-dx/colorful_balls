@@ -1,25 +1,25 @@
-/* 2354218 –§º—ÕÆ º∆ø∆ */
+
 #include "90-b2.h"
 void g_init(int x,int y,int shuzu[9][9],int line,int col)
 {
-	cct_showstr(x, y, "®X", COLOR_HWHITE, 0);
-	cct_showstr(x + 2, y, "®T", COLOR_HWHITE, 0, col);
-	cct_showstr(x + 2+col*2, y, "®[", COLOR_HWHITE, 0 );
+	cct_showstr(x, y, "‚ïî", COLOR_HWHITE, 0);
+	cct_showstr(x + 2, y, "‚ïê", COLOR_HWHITE, 0, col);
+	cct_showstr(x + 2+col*2, y, "‚ïó", COLOR_HWHITE, 0 );
 	
 	for (int i = 0; i < line; i++) {
-		cct_showstr(x, y+i+1, "®U", COLOR_HWHITE, 0);
-		cct_showstr(x + 2 + col * 2, y + i + 1, "®U", COLOR_HWHITE, 0);
+		cct_showstr(x, y+i+1, "‚ïë", COLOR_HWHITE, 0);
+		cct_showstr(x + 2 + col * 2, y + i + 1, "‚ïë", COLOR_HWHITE, 0);
 	}
-	cct_showstr(x, y+line+1, "®^", COLOR_HWHITE, 0);
-	cct_showstr(x + 2, y+line+1, "®T", COLOR_HWHITE, 0, col);
-	cct_showstr(x + 2 + col * 2, y+line+1, "®a", COLOR_HWHITE, 0);
-   //øÚº‹
+	cct_showstr(x, y+line+1, "‚ïö", COLOR_HWHITE, 0);
+	cct_showstr(x + 2, y+line+1, "‚ïê", COLOR_HWHITE, 0, col);
+	cct_showstr(x + 2 + col * 2, y+line+1, "‚ïù", COLOR_HWHITE, 0);
+   //Ê°ÜÊû∂
 	for (int i = 0; i < line; i++) {
 		for (int j = 0; j < col; j++) {
 			if (shuzu[i][j] == 0)
-				cct_showstr(x + 2 + 2*j ,y + 1 + i, "©ñ", COLOR_HWHITE, COLOR_HWHITE);
+				cct_showstr(x + 2 + 2*j ,y + 1 + i, "„Äá", COLOR_HWHITE, COLOR_HWHITE);
 			else
-				cct_showstr(x + 2 + 2*j,y + 1 +  i , "©ñ", shuzu[i][j], COLOR_HWHITE);
+				cct_showstr(x + 2 + 2*j,y + 1 +  i , "„Äá", shuzu[i][j], COLOR_HWHITE);
 		}
 	}
 	cct_setcolor();
@@ -29,27 +29,27 @@ void g_init(int x,int y,int shuzu[9][9],int line,int col)
 void g_init_c(int x, int y, int line, int col)
 {
 	int nx, ny;
-	cct_showstr(x, y, "®X", COLOR_HWHITE, 0);
-	cct_showstr(x + 2, y, "®T®j", COLOR_HWHITE, 0, col-1);
+	cct_showstr(x, y, "‚ïî", COLOR_HWHITE, 0);
+	cct_showstr(x + 2, y, "‚ïê‚ï¶", COLOR_HWHITE, 0, col-1);
 	cct_getxy(nx,ny);
-	cct_showstr(nx, ny, "®T®[", COLOR_HWHITE, 0);
+	cct_showstr(nx, ny, "‚ïê‚ïó", COLOR_HWHITE, 0);
 	for (int i = 0; i < 2*line-1; i++) {
 		if (i % 2 == 0) {
-			cct_showstr(x, y + 1+i, "®U  ", COLOR_HWHITE, 0, col);
+			cct_showstr(x, y + 1+i, "‚ïë  ", COLOR_HWHITE, 0, col);
 			cct_getxy(nx, ny);
-			cct_showstr(nx, ny, "®U", COLOR_HWHITE, 0);
+			cct_showstr(nx, ny, "‚ïë", COLOR_HWHITE, 0);
 		}
 		else {
-			cct_showstr(x, y + 1 + i, "®d", COLOR_HWHITE, 0);
-			cct_showstr(x+2, y + 1 + i, "®T®p", COLOR_HWHITE, 0,col-1);
+			cct_showstr(x, y + 1 + i, "‚ï†", COLOR_HWHITE, 0);
+			cct_showstr(x+2, y + 1 + i, "‚ïê‚ï¨", COLOR_HWHITE, 0,col-1);
 			cct_getxy(nx, ny);
-			cct_showstr(nx, ny, "®T®g", COLOR_HWHITE, 0);
+			cct_showstr(nx, ny, "‚ïê‚ï£", COLOR_HWHITE, 0);
 		}
 	}
-	cct_showstr(x, y+2*line, "®^", COLOR_HWHITE, 0);
-	cct_showstr(x + 2, y+2*line, "®T®m", COLOR_HWHITE, 0, col - 1);
+	cct_showstr(x, y+2*line, "‚ïö", COLOR_HWHITE, 0);
+	cct_showstr(x + 2, y+2*line, "‚ïê‚ï©", COLOR_HWHITE, 0, col - 1);
 	cct_getxy(nx, ny);
-	cct_showstr(nx, ny, "®T®a", COLOR_HWHITE, 0);
+	cct_showstr(nx, ny, "‚ïê‚ïù", COLOR_HWHITE, 0);
 }
 
 void g_init_c2(int x, int y, int shuzu[9][9], int line, int col)
@@ -57,33 +57,33 @@ void g_init_c2(int x, int y, int shuzu[9][9], int line, int col)
 	for (int i = 0; i < line; i++) {
 		for (int j = 0; j < col; j++) {
 			if (shuzu[i][j] != 0)
-				cct_showstr(x + 2 + 4 * j, y + 1 + 2 * i, "©ñ", shuzu[i][j], COLOR_HWHITE);
+				cct_showstr(x + 2 + 4 * j, y + 1 + 2 * i, "„Äá", shuzu[i][j], COLOR_HWHITE);
 		}
 	}
 	cct_setcolor();
 }
-//“∆∂Ø“ª∏Ò
+//ÁßªÂä®‰∏ÄÊ†º
 void move_a_step(int nr, int nc, int er, int ec,int color)
 {
 	int dr = er - nr, dc = ec - nc;
 	if (dr) {
 		Sleep(200);
 		cct_showstr(4 * nc + 2, 2 * nr + 2, "  ", COLOR_HWHITE, COLOR_HWHITE);
-		cct_showstr(4 * nc + 2 , 2 * nr + 2+dr, "°Ú",color, COLOR_HWHITE);
+		cct_showstr(4 * nc + 2 , 2 * nr + 2+dr, "‚óé",color, COLOR_HWHITE);
 		Sleep(200);
-		cct_showstr(4 * nc + 2, 2 * nr + 2+dr, "®T", COLOR_HWHITE, 0);
-		cct_showstr(4 * nc + 2, 2 * nr + 2+2*dr, "°Ú", color, COLOR_HWHITE);
+		cct_showstr(4 * nc + 2, 2 * nr + 2+dr, "‚ïê", COLOR_HWHITE, 0);
+		cct_showstr(4 * nc + 2, 2 * nr + 2+2*dr, "‚óé", color, COLOR_HWHITE);
 	}
 	if (dc) {
 		Sleep(200);
 		cct_showstr(4 * nc + 2, 2 * nr + 2, "  ", COLOR_HWHITE, COLOR_HWHITE);
-		cct_showstr(4 * nc + 2+2*dc, 2 * nr + 2, "°Ú", color, COLOR_HWHITE);
+		cct_showstr(4 * nc + 2+2*dc, 2 * nr + 2, "‚óé", color, COLOR_HWHITE);
 		Sleep(200);
-		cct_showstr(4 * nc + 2+2*dc, 2 * nr + 2, "®U", COLOR_HWHITE, 0);
-		cct_showstr(4 * nc + 2+4*dc,2 * nr + 2, "°Ú", color, COLOR_HWHITE);
+		cct_showstr(4 * nc + 2+2*dc, 2 * nr + 2, "‚ïë", COLOR_HWHITE, 0);
+		cct_showstr(4 * nc + 2+4*dc,2 * nr + 2, "‚óé", color, COLOR_HWHITE);
 	}
 }
-//Õº–Œ“∆∂Ø“ª≤Ω
+//ÂõæÂΩ¢ÁßªÂä®‰∏ÄÊ≠•
 bool move_path(int line, int col, int shuzu[][9],int flag2)
 {
 	int X = 0, Y = 0;
@@ -101,19 +101,19 @@ bool move_path(int line, int col, int shuzu[][9],int flag2)
 		ret = cct_read_keyboard_and_mouse(X, Y, maction, keycode1, keycode2);
 		if (ret == CCT_MOUSE_EVENT) {
 			cct_gotoxy(0, 2 * line + 2);
-			cout << "[µ±«∞π‚±Í] ";
-			if ((X % 4 == 2 || X % 4 == 3) && X < (2 + 4 * col) && Y % 2 == 0 && Y>0 && Y < (2 + line * 2)) {// Û±Í”––ß
+			cout << "[ÂΩìÂâçÂÖâÊ†á] ";
+			if ((X % 4 == 2 || X % 4 == 3) && X < (2 + 4 * col) && Y % 2 == 0 && Y>0 && Y < (2 + line * 2)) {//Èº†Ê†áÊúâÊïà
 				int nc = (X + 2) / 4;
 				int nl = Y / 2;
-				cout << (char)('A' + nl - 1) << "––" << nc << "¡–            ";
+				cout << (char)('A' + nl - 1) << "Ë°å" << nc << "Âàó            ";
 				if (maction == MOUSE_LEFT_BUTTON_CLICK && shuzu[nl - 1][nc - 1]) {
 					if (flag == 1)
-						cct_showstr(start_c * 4 + 2, start_r * 2 + 2, "©ñ", shuzu[start_r][start_c], COLOR_HWHITE);
+						cct_showstr(start_c * 4 + 2, start_r * 2 + 2, "„Äá", shuzu[start_r][start_c], COLOR_HWHITE);
 					if (flag2)
-						cct_showstr(end_c * 4 + 2, end_r * 2 + 2, "©ñ", shuzu[end_r][end_c], COLOR_HWHITE);
+						cct_showstr(end_c * 4 + 2, end_r * 2 + 2, "„Äá", shuzu[end_r][end_c], COLOR_HWHITE);
 					start_c = nc - 1;
 					start_r = nl - 1;
-					cct_showstr(nc * 4 - 2, nl * 2, "°Ú", shuzu[start_r][start_c], COLOR_HWHITE);
+					cct_showstr(nc * 4 - 2, nl * 2, "‚óé", shuzu[start_r][start_c], COLOR_HWHITE);
 					cct_setcolor();
 					flag = 1;
 				}
@@ -123,7 +123,7 @@ bool move_path(int line, int col, int shuzu[][9],int flag2)
 					ret = findway(shuzu, result, start_r, start_c, end_r, end_c, line, col, path_x, path_y, path_length);
 					if (ret) {
 						cct_gotoxy(0, 2 * line + 2);
-						cout << "[Ã· æ]ø…“‘¥”["<< (char)('A' + start_r)<< start_c+1<<"]“∆∂ØµΩ["<< (char)('A' + end_r)<< end_c + 1<<"]";
+						cout << "[ÊèêÁ§∫]ÂèØ‰ª•‰ªé["<< (char)('A' + start_r)<< start_c+1<<"]ÁßªÂä®Âà∞["<< (char)('A' + end_r)<< end_c + 1<<"]";
 						for (int i = path_length - 1; i > 0; i--)
 							move_a_step(path_x[i], path_y[i], path_x[i - 1], path_y[i - 1], shuzu[start_r][start_c]);
 						shuzu[end_r][end_c] = shuzu[start_r][start_c];
@@ -134,7 +134,7 @@ bool move_path(int line, int col, int shuzu[][9],int flag2)
 					}
 					else {
 						cct_gotoxy(0, 2 * line + 2);
-						cout << "[¥ÌŒÛ] Œﬁ∑®¥”[" << (char)('A' + start_r) << start_c + 1 << "]“∆∂ØµΩ[" << (char)('A' + end_r) << end_c + 1 << "]";
+						cout << "[ÈîôËØØ] Êó†Ê≥ï‰ªé[" << (char)('A' + start_r) << start_c + 1 << "]ÁßªÂä®Âà∞[" << (char)('A' + end_r) << end_c + 1 << "]";
 					}
 				}
 				if (maction == MOUSE_RIGHT_BUTTON_CLICK) {
@@ -143,7 +143,7 @@ bool move_path(int line, int col, int shuzu[][9],int flag2)
 				}
 			}
 			else
-				cout << "Œª÷√∑«∑®            ";
+				cout << "‰ΩçÁΩÆÈùûÊ≥ï            ";
 		}
 	}
 }
@@ -158,17 +158,17 @@ void tongji(int shuzu[][9],int line,int col,int ret[8])
 }
 void column_1(int shuzu[][9],int rand3[], int score,int line,int col,int x = 40, int y = 1)
 {
-	cct_showstr(x, y,     "®X®T®T®T®T®T®[", COLOR_HWHITE, COLOR_BLACK);
-	cct_showstr(x, y + 1, "®Uµ√∑÷£∫    ®U", COLOR_HWHITE, COLOR_BLACK);
+	cct_showstr(x, y,     "‚ïî‚ïê‚ïê‚ïê‚ïê‚ïê‚ïó", COLOR_HWHITE, COLOR_BLACK);
+	cct_showstr(x, y + 1, "‚ïëÂæóÂàÜÔºö    ‚ïë", COLOR_HWHITE, COLOR_BLACK);
 	cct_showint(x + 8, y + 1, score, COLOR_HWHITE, COLOR_BLACK);
-	cct_showstr(x, y+2,   "®^®T®T®T®T®T®a", COLOR_HWHITE, COLOR_BLACK);
+	cct_showstr(x, y+2,   "‚ïö‚ïê‚ïê‚ïê‚ïê‚ïê‚ïù", COLOR_HWHITE, COLOR_BLACK);
 
-	cct_showstr(x, y + 4, "®X®T®j®T®j®T®[", COLOR_HWHITE, COLOR_BLACK);
-	cct_showstr(x, y + 5, "®U  ®U  ®U  ®U", COLOR_HWHITE, COLOR_BLACK);
-	cct_showstr(x, y + 6, "®^®T®m®T®m®T®a", COLOR_HWHITE, COLOR_BLACK);
-	cct_showstr(x+2, y + 5, "©ñ", rand3[0], COLOR_HWHITE);
-	cct_showstr(x + 6, y + 5, "©ñ", rand3[1], COLOR_HWHITE);
-	cct_showstr(x + 10, y + 5, "©ñ", rand3[2], COLOR_HWHITE);
+	cct_showstr(x, y + 4, "‚ïî‚ïê‚ï¶‚ïê‚ï¶‚ïê‚ïó", COLOR_HWHITE, COLOR_BLACK);
+	cct_showstr(x, y + 5, "‚ïë  ‚ïë  ‚ïë  ‚ïë", COLOR_HWHITE, COLOR_BLACK);
+	cct_showstr(x, y + 6, "‚ïö‚ïê‚ï©‚ïê‚ï©‚ïê‚ïù", COLOR_HWHITE, COLOR_BLACK);
+	cct_showstr(x+2, y + 5, "„Äá", rand3[0], COLOR_HWHITE);
+	cct_showstr(x + 6, y + 5, "„Äá", rand3[1], COLOR_HWHITE);
+	cct_showstr(x + 10, y + 5, "„Äá", rand3[2], COLOR_HWHITE);
 
 }
 
@@ -176,19 +176,19 @@ void column_2(int shuzu[][9], int xiaochu[8], int score, int line, int col, int 
 {
 	int ret[8] = { 0 };
 	tongji(shuzu, line, col, ret);
-	cct_showstr(x, y + 8, "®X®T®T®T®T®T®T®T®T®T®T®T®T®[", COLOR_HWHITE, COLOR_BLACK);
+	cct_showstr(x, y + 8, "‚ïî‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïó", COLOR_HWHITE, COLOR_BLACK);
 	for (int i = 0; i < 8; i++)
 	{
-		cct_showstr(x, y + 9 + i, "®U                        ®U", COLOR_HWHITE, COLOR_BLACK);
+		cct_showstr(x, y + 9 + i, "‚ïë                        ‚ïë", COLOR_HWHITE, COLOR_BLACK);
 		if (i == 0)
-			cct_showstr(x + 2, y + 9 + i, "©ñ", COLOR_HWHITE, COLOR_HWHITE);
+			cct_showstr(x + 2, y + 9 + i, "„Äá", COLOR_HWHITE, COLOR_HWHITE);
 		else {
-			cct_showstr(x + 2, y + 9 + i, "©ñ", i, COLOR_HWHITE);
+			cct_showstr(x + 2, y + 9 + i, "„Äá", i, COLOR_HWHITE);
 		}
 		cct_setcolor(COLOR_HWHITE, COLOR_BLACK);
-		cout << setfill('0') << setw(2) << ret[i] << "/(" << fixed << setprecision(2) << setw(5) << ((double)ret[i] / (line * col)) * 100 << "%) œ˚≥˝-"<<xiaochu[i];
+		cout << setfill('0') << setw(2) << ret[i] << "/(" << fixed << setprecision(2) << setw(5) << ((double)ret[i] / (line * col)) * 100 << "%) Ê∂àÈô§-"<<xiaochu[i];
 	};
-	cct_showstr(x, y + 17, "®^®T®T®T®T®T®T®T®T®T®T®T®T®a", COLOR_HWHITE, COLOR_BLACK);
+	cct_showstr(x, y + 17, "‚ïö‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïù", COLOR_HWHITE, COLOR_BLACK);
 	cct_setcolor();
 }
 void choice_d()
@@ -198,10 +198,10 @@ void choice_d()
 	cct_cls();
 	input(line, col);
 	cout << endl;
-	cout << "≥ı º ˝◊È£∫" << endl;
+	cout << "ÂàùÂßãÊï∞ÁªÑÔºö" << endl;
 	init(shuzu, line, col, 5);;
 	print_shuzu(shuzu, line, col);
-	cout << endl<<"∞¥ªÿ≥µº¸œ‘ æÕº–Œ...";
+	cout << endl<<"ÊåâÂõûËΩ¶ÈîÆÊòæÁ§∫ÂõæÂΩ¢...";
 	while (_getch() != '\r')
 		;
 	g_init(0, 1, shuzu, line, col);
@@ -214,10 +214,10 @@ void choice_e()
 	cct_cls();
 	input(line, col);
 	cout << endl;
-	cout << "≥ı º ˝◊È£∫" << endl;
+	cout << "ÂàùÂßãÊï∞ÁªÑÔºö" << endl;
 	init(shuzu, line, col, 5);;
 	print_shuzu(shuzu, line, col);
-	cout << endl << "∞¥ªÿ≥µº¸œ‘ æÕº–Œ...";
+	cout << endl << "ÊåâÂõûËΩ¶ÈîÆÊòæÁ§∫ÂõæÂΩ¢...";
 	while (_getch() != '\r')
 		;
 	g_init_c(0, 1, line, col);
@@ -236,7 +236,7 @@ void choice_f()
 	n = int(line * col * 0.6);
 	init(shuzu, line, col, n);
 	cct_setcursor(CURSOR_INVISIBLE);
-	cct_showstr(0, 0, " Û±Í“∆∂Ø£¨◊Ûº¸µ•ª˜—°‘Ò£¨”“º¸ÕÀ≥ˆ");
+	cct_showstr(0, 0, "Èº†Ê†áÁßªÂä®ÔºåÂ∑¶ÈîÆÂçïÂáªÈÄâÊã©ÔºåÂè≥ÈîÆÈÄÄÂá∫");
 	g_init_c(0, 1 , line, col);
 	g_init_c2(0, 1, shuzu, line, col);
 	move_path(line, col, shuzu,flag=0);
@@ -253,7 +253,7 @@ void choice_g()
 	input(line, col);
 	init(shuzu, line, col, 5);
 	cct_setcursor(CURSOR_INVISIBLE);
-	cct_showstr(0, 0, " Û±Í“∆∂Ø£¨◊Ûº¸µ•ª˜—°‘Ò£¨”“º¸ÕÀ≥ˆ");
+	cct_showstr(0, 0, "Èº†Ê†áÁßªÂä®ÔºåÂ∑¶ÈîÆÂçïÂáªÈÄâÊã©ÔºåÂè≥ÈîÆÈÄÄÂá∫");
 	g_init_c(0, 1, line, col);
 	g_init_c2(0, 1, shuzu, line, col);
 	while (1) {
